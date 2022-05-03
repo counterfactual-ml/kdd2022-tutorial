@@ -39,8 +39,8 @@ baseurl: "/kdd2022-tutorial" # the subpath of your site, e.g. "/blog".
 # Github and twitter are optional:
 minima:
   social_links:
-    twitter: https://twitter.com/usait0
-    github: https://github.com/counterfactual-ml
+    twitter: usait0
+    github: counterfactual-ml
 
 # Set this to true to get LaTeX math equation support
 use_math: 
