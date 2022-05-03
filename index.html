@@ -4,12 +4,141 @@ search_exclude: true
 image: images/logo.png
 ---
 
-This site is built with [fastpages](https://github.com/fastai/fastpages), An easy to use blogging platform with extra features for Jupyter Notebooks.
+## **Schedule**
 
-![]({{site.baseurl}}/images/diagram.png "https://github.com/fastai/fastpages")
+### Time
 
-[fastpages](https://github.com/fastai/fastpages) automates the process of creating blog posts via GitHub Actions, so you don't have to fuss with conversion scripts.  A full list of features can be found on [GitHub](https://github.com/fastai/fastpages).  
+Sometime between August 14-18, 2022.
 
-You can edit the `index.html` file to change this content.
 
-# Posts
+## **Abstract**
+
+Counterfactual estimators enable the use of existing log data to estimate how some new target policy would have performed, if it had been used instead of the policy that logged the data. 
+We say that those estimators work "off-policy", since the policy that logged the data is different from the target policy. 
+In this way, counterfactual estimators enable *Off-policy Evaluation* (OPE) akin to an unbiased offline A/B test, as well as learning new decision-making policies through *Off-policy Learning* (OPL). 
+The goal of this tutorial is to summarize *Foundations, Implementations, and Recent Advances* of OPE and OPL (OPE/OPL), with applications in recommendation, search, and an ever growing range of interactive systems. 
+Specifically, we will introduce the fundamentals of OPE/OPL and provide theoretical and empirical comparisons of conventional methods. 
+Then, we will cover emerging practical challenges such as how to handle large action spaces, distributional shift, and hyper-parameter tuning. 
+We will then present [Open Bandit Pipeline](https://github.com/st-tech/zr-obp), an open-source Python software for OPE/OPL to better enable new research and applications. 
+We will conclude the tutorial with future directions and an interactive QA session.
+
+The learning outcomes of this tutorial are to enable the participants (such as applied researchers, practitioners, and students):
+
+- to know fundamental concepts and conventional methods of OPE/OPL
+- to be familiar with recent advances to address practical challenges such as large action spaces and hyper-parameter tuning
+- to understand how to implement OPE/OPL in their research and applications
+- to be aware of remaining challenges and opportunities in the relevant field
+
+Note that all materials, including slides and demo code, will be available during and after the tutorial on this tutorial website.
+
+## **Target Audience and Prerequisites for the Tutorial**
+
+This tutorial is aimed at an audience with intermediate experience in machine learning, data mining, or recommender systems who are interested in using OPE/OPL methods in their research and applications. 
+Participants are expected to have basic knowledge of machine learning, probability theory, and statistics. 
+Basic knowledge about causal inference might help understand the contents better, but is not required.
+
+
+## **Outline**
+
+| **Section** |**Presenter** | **Duration** | Slides | Code |
+|-----------|--------------|--------|------|------|
+| Introduction to OPE/OPL | Thorsten Joachims | 30min | | |
+| Bias-Variance Control | Yuta Saito | 40min | | |
+| Recent Advances in OPE | Yuta Saito | 40min | | |
+| Break |  | 30min | | |
+| Off-Policy Learning | Thorsten Joachims | 40min | | |
+| Implementations | Yuta Saito | 20min | | |
+| Conclusions and QAs | Both | 10min | | |
+
+
+## **Section Abstracts**
+
+
+### Introduction to OPE/OPL (Thorstem Joachims; 30min) 
+
+We will introduce conventional formulation of OPE and how it helps improve interactive systems quickly and safely. We also introduce basic estimators in OPE including Direct Method (DM) and Inverse Propensity Score (IPS) weighting with some empirical illustrations to highlight their bias-variance trade-off.
+
+### Bias-Variance Control (Yuta Saito; 40min)
+
+This section summarizes a wide range of existing estimators in OPE including Self-Normalized IPS, Doubly Robust, Switch, and Doubly Robust with Shrinkage. These estimators aim at achieving a better bais-variance trade-off compared to DM and IPS. We will provide comprehensive comparisons of these estimators from both theoretical and empirical perspectives.
+
+### Recent Advances (Yuta Saito; 40min)
+
+This section will cover recent related methods to handle emerging practical challenges such as OPE of ranking policies~\citep{li2018offline,mcinerney2020counterfactual,saito2020doubly,kiyohara2022doubly}, large-scale applications~\citep{saito2022off,ma2020off}, deficient support~\citep{sachdeva2020off}, multiple loggers~\citep{kallus2020optimal,agarwal2017effective}, and hyper-parameter tuning for OPE~\citep{su2020adaptive,su2020doubly,tucker2021improved,udagawa2021evaluating}. These challenges are closely related to real-world applications such as recommender and retrieval systems where the estimators have to deal with many number of actions and non-stationary dynamics.
+
+### Off-Policy Learning (Thorsten Joachims; 40min)
+
+This section will cover the fundamental methods for OPL where we aim at training a new decision-making policy using only the logged bandit data.
+
+
+### Implementations (Yuta Saito; 20min)
+
+This section will introduce [Open Bandit Pipeline](https://github.com/st-tech/zr-obp), an open-source Python package for OPE/OPL, and demonstrate how it helps us implement OPE/OPL for both research and practical purposes.
+
+### Conclusions and QAs (Both Presenters; 10min)
+
+This section will conclude the tutorial by summarizing the previous sections and presenting remaining research challenges of the area. There will also be a live QA session.
+
+
+## Presenters
+
+### [Yuta Saito](https://usait0.com/en/) (ys552@cornell.edu)
+
+He is a Ph.D. student in the Department of Computer Science at Cornell University, advised by Prof. Thorsten Joachims. 
+His current research focuses on OPE of bandit algorithm, learning from human behavior data, and fairness in ranking. 
+Some of his recent work has been published at top conferences, including ICML, NeurIPS, SIGIR, RecSys, and WSDM. 
+He has won the Best Paper Runner-Up Award at WSDM2020 and co-lectured a tutorial related to counterfactual inference at RecSys 2021.
+
+### [Throsten Joachims](https://www.cs.cornell.edu/people/tj/) (tj@cs.cornell.edu)
+
+He is a Professor in the Department of Computer Science and in the Department of Information Science at Cornell University, and he is an Amazon Scholar. 
+His research interests center on the synthesis of theory and system building in machine learning, with applications in information retrieval and recommendation. 
+His past research focused on support vector machines, learning to rank, learning with preferences, and learning from implicit feedback, text classification, and structured output prediction. 
+Working with his students and collaborators, his papers won 9 Best Paper Awards and 4 Test-of-Time Awards. He is also an ACM Fellow, AAAI Fellow, KDD Innovations Award recipient, and member of the SIGIR Academy.
+
+## Related Tutorials
+
+- [Tutorial on Counterfactual Evaluation and Learning for Search, Recommendation and Ad Placement](https://www.google.com/url?q=https%3A%2F%2Fwww.cs.cornell.edu%2F~adith%2FCfactSIGIR2016%2F&sa=D) (SIGIR2016)
+- [Unbiased Learning-to-Rank Counterfactual and Online Approaches](https://www.google.com/url?q=https%3A%2F%2Filps.github.io%2Fwebconf2020-tutorial-unbiased-ltr%2F&sa=D) (SIGIR2019, WWW2020)
+- [Tutorial on Real-World Interactive Learning](https://www.google.com/url?q=https%3A%2F%2Fhunch.net%2F~rwil%2F&sa=D) (ICML2017)
+- [Counteracting Bias and Increasing Fairness in Search and Recommender Systems](https://www.google.com/url?q=https%3A%2F%2Fyoutu.be%2FTtF6exuBbSU&sa=D) (RecSys2020)
+- [Tutorial on Advances in Recommender Systems: From Multi-stakeholder Marketplaces to Automated RecSys](https://sites.google.com/view/kdd20-marketplace-autorecsys/) (KDD2020)
+- [Causal Inference and Machine Learning in Practice with EconML and CausalML](https://www.google.com/url?q=https%3A%2F%2Fcausal-machine-learning.github.io%2Fkdd2021-tutorial%2F&sa=D) (KDD2021)
+- [Recommender Systems through the lens of Decision Theory: Unifying Policy- and Value-based Approaches to Recommendation](https://sites.google.com/view/recsys-as-decision-theory) (WebConf2021)
+- [Counterfactual Learning and Evaluation for Recommender Systems: Foundations, Implementations, and Recent Advances](https://sites.google.com/cornell.edu/recsys2021tutorial/home?authuser=0) (RecSys2021)
+
+## **References**
+
+[1] Aman Agarwal, Soumya Basu, Tobias Schnabel, and Thorsten Joachims. 2017. Effective Evaluation using Logged Bandit Feedback from Multiple Loggers. In Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 687–696. 
+[2] Mert Demirer, Vasilis Syrgkanis, Greg Lewis, and Victor Chernozhukov. 2019. Semi-Parametric Efficient Policy Learning with Continuous Actions. In Advances in Neural Information Processing Systems, Vol. 32. 
+[3] Miroslav Dudík, Dumitru Erhan, John Langford, and Lihong Li. 2014. Doubly Robust Policy Evaluation and Optimization. Statist. Sci. 29, 4 (2014), 485–511. 
+[4] Mehrdad Farajtabar, Yinlam Chow, and Mohammad Ghavamzadeh. 2018. More Robust Doubly Robust Off-policy Evaluation. In Proceedings of the 35th International Conference on Machine Learning, Vol. 80. PMLR, 1447–1456. 
+[5] Nan Jiang and Lihong Li. 2016. Doubly Robust Off-Policy Value Evaluation for Reinforcement Learning. In Proceedings of the 33rd International Conference on Machine Learning, Vol. 48. PMLR, 652–661. 
+[6] Thorsten Joachims and Adith Swaminathan. 2016. Counterfactual Evaluation and Learning for Search, Recommendation and Ad Placement. In Proceedings of the 39th International ACM SIGIR conference on Research and Development in Information Retrieval, 1199–1201. 
+[7] Nathan Kallus, Yuta Saito, and Masatoshi Uehara. 2021. Optimal Off-Policy Evaluation from Multiple Logging Policies. In Proceedings of the 38th International Conference on Machine Learning, Vol. 139. PMLR, 5247–5256. 
+[8] Nathan Kallus and Angela Zhou. 2018. Policy Evaluation and Optimization with Continuous Treatments. In Proceedings of the Twenty-First International Conference on Artificial Intelligence and Statistics. PMLR, 1243–1251. 
+[9] Masahiro Kato, Shota Yasui, and Masatoshi Uehara. 2020. Off-Policy Evaluation and Learning for External Validity under a Covariate Shift. In Advances in Neural Information Processing Systems, Vol. 33. 49–61. 
+[10] Shuai Li, Yasin Abbasi-Yadkori, Branislav Kveton, S Muthukrishnan, Vishwa Vinay, and Zheng Wen. 2018. Offline Evaluation of Ranking Policies with Click Models. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, 1685–1694. 
+[11] Anqi Liu, Hao Liu, Anima Anandkumar, and Yisong Yue. 2019. Triply Robust Off-Policy Evaluation. arXiv preprint arXiv:1911.05811 (2019).
+[12] James McInerney, Brian Brost, Praveen Chandar, Rishabh Mehrotra, and Benjamin Carterette. 2020. Counterfactual Evaluation of Slate Recommendations with Sequential Reward Interactions. In Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining. 1779–1788. 
+[13] Noveen Sachdeva, Yi Su, and Thorsten Joachims. 2020. Off-policy Bandits with Deficient Support. In Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining. 965–975. 
+[14] Yuta Saito. 2020. Doubly Robust Estimator for Ranking Metrics with Post-Click Conversions. In Fourteenth ACM Conference on Recommender Systems. Association for Computing Machinery, 92–100. 
+[15] Yuta Saito, Shunsuke Aihara, Megumi Matsutani, and Yusuke Narita. 2020. Open Bandit Dataset and Pipeline: Towards Realistic and Reproducible Off-Policy Evaluation. arXiv preprint arXiv:2008.07146 (2020). 
+[16] Nian Si, Fan Zhang, Zhengyuan Zhou, and Jose Blanchet. 2020. Distributionally Robust Policy Evaluation and Learning in Offline Contextual Bandits. In Proceedings of the 38th International Conference on Machine Learning, Vol. 119. PMLR, 8884–8894. 
+[17] Ashudeep Singh and Thorsten Joachims. 2018. Fairness of Exposure in Rankings. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining. 2219–2228. 
+[18] Ashudeep Singh and Thorsten Joachims. 2019. Policy Learning for Fairness in Ranking. In Advances in Neural Information Processing Systems, Vol. 32. 
+[19] Yi Su, Maria Dimakopoulou, Akshay Krishnamurthy, and Miroslav Dudík. 2020. Doubly Robust Off-Policy Evaluation with Shrinkage. In Proceedings of the 37th International Conference on Machine Learning, Vol. 119. PMLR, 9167–9176. 
+[20] Yi Su, Lequn Wang, Michele Santacatterina, and Thorsten Joachims. 2019. Cab: Continuous Adaptive Blending for Policy Evaluation and Learning. In Proceedings of the 36th International Conference on Machine Learning, Vol. 97. PMLR, 6005–6014. 
+[21] Adith Swaminathan and Thorsten Joachims. 2015. Batch Learning from Logged Bandit Feedback through Counterfactual Risk Minimization. The Journal of Machine Learning Research 16, 1 (2015), 1731–1755. 
+[22] Lequn Wang, Yiwei Bai, Wen Sun, and Thorsten Joachims. 2021. Fairness of Exposure in Stochastic Bandits. In Proceedings of the 38th International Conference on Machine Learning, Vol. 139. PMLR, 10686-10696. 
+[23] Lequn Wang and Thorsten Joachims. 2020. Fairness and Diversity for Rankings in Two-Sided Markets. arXiv preprint arXiv:2010.01470 (2020). 
+[24] Yu-Xiang Wang, Alekh Agarwal, and Miroslav Dudık. 2017. Optimal and Adaptive Off-Policy Evaluation in Contextual Bandits. In Proceedings of the 34th International Conference on Machine Learning, Vol. 70. PMLR, 3589–3597. 
+[25] Himank Yadav, Zhengxiao Du, and Thorsten Joachims. 2021. Policy Gradient Training of Fair and Unbiased Ranking Functions. In Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval, 1044-1053.
+[26] Yusuke Narita, Shota Yasui, Kohei Yata. 2021. Debiased Off-Policy Evaluation for Recommendation Systems.  In Fifteenth ACM Conference on Recommender Systems. Association for Computing Machinery, xxx.
+[27] Nathan Kallus and Masatoshi Uehara. 2020. Double Reinforcement Learning for Efficient and Robust Off-Policy Evaluation. In Proceedings of the 37th International Conference on Machine Learning, Vol. 119. PMLR, 5078-5088.
+[28] Adith Swaminathan and Thorsten Joachims. 2016. The Self-Normalized Estimator for Counterfactual Learning. In Advances in Neural Information Processing Systems, Vol. 28.
+[29] Minmin Chen, Alex Beutel, Paul Covington, Sagar Jain, Francois Belletti, Ed Chi. 2019. Top-K Off-Policy Correction for a REINFORCE Recommender System. In Proceedings of the Twelfth ACM International Conference on Web Search and Data Mining, 456-464.
+[30] Sergey Levine, Aviral Kumar, George Tucker, Justin Fu. 2020. Offline Reinforcement Learning: Tutorial, Review, and Perspectives on Open Problems. arXiv preprint arXiv:2005.01643 (2020).
+[31] Yuta Saito and Thorsten Joachims. 2022. Off-Policy Evaluation for Large Action Spaces via Embeddings. arXiv preprint arXiv:2202.06317 (2022).
+[32] Yuta Saito, Takuma Udagawa, Haruka Kiyohara, Kazuki Mogi, Yusuke Narita, and Kei Tateno. 2021. Evaluating the Robustness of Off-Policy Evaluation. In Fifteenth ACM Conference on Recommender Systems. 114–123.
+[33] Haruka Kiyohara, Yuta Saito, Tatsuya Matsuhiro, Yusuke Narita, Nobuyuki Shimizu, and Yasuo Yamamoto. 2022. Doubly Robust Off-Policy Evaluation for Ranking Policies under the Cascade Behavior Model. In Proceedings of the Fifteenth ACM International Conference on Web Search and Data Mining. 487–497.
