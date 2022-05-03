@@ -6,8 +6,8 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: fastpages
-description: An easy to use blogging platform with support for Jupyter Notebooks.
+title: Counterfactual Evaluation and Learning for Interactive Systems (KDD2022 Tutorial)
+description: Counterfactual Evaluation and Learning for Interactive Systems (KDD2022 Tutorial)
 github_username: counterfactual-ml
 # you can comment the below line out if your repo name is not different than your baseurl
 github_repo: "kdd2022-tutorial"
@@ -39,8 +39,8 @@ baseurl: "/kdd2022-tutorial" # the subpath of your site, e.g. "/blog".
 # Github and twitter are optional:
 minima:
   social_links:
-    twitter: fastdotai
-    github: fastai
+    twitter: https://twitter.com/usait0
+    github: https://github.com/counterfactual-ml
 
 # Set this to true to get LaTeX math equation support
 use_math: 
